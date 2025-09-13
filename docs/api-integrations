@@ -1,0 +1,245 @@
+Absolutely! Perfect time to work on the non-coding foundations that will make development smoother once Xcode is ready.
+
+## 1. Complete Your GitHub Documentation (30-45 mins)
+
+### Add Missing Technical Specs
+
+Create `docs/api-integrations.md`:
+
+```markdown
+# API Integration Requirements
+
+## Google Calendar API
+- **Scope needed**: `https://www.googleapis.com/auth/calendar`
+- **Setup steps**: 
+  1. Google Cloud Console project
+  2. Enable Calendar API
+  3. Create OAuth 2.0 credentials
+  4. Download GoogleService-Info.plist
+- **Rate limits**: 1,000,000 requests/day (more than enough)
+- **Cost**: Free
+
+## Microsoft Graph API  
+- **Scope needed**: `https://graph.microsoft.com/calendars.read`, `calendars.readwrite`
+- **Setup steps**:
+  1. Azure AD app registration
+  2. Configure redirect URIs
+  3. Set up MSAL authentication
+- **Rate limits**: 10,000 requests per 10 minutes
+- **Cost**: Free for most usage
+
+## Apple EventKit
+- **Permission**: NSCalendarsUsageDescription
+- **No API key needed** - built into iOS
+- **Rate limits**: None (local access)
+- **Cost**: Free
+```
+
+### Create User Research Document
+
+Create `planning/user-personas.md`:
+
+```markdown
+# ADHD User Personas
+
+## Primary Persona: "Racing Brain Rachel"
+- **Age**: 28, marketing manager
+- **ADHD Type**: Combined type, diagnosed at 25
+- **Tech comfort**: High
+- **Calendars**: Personal Gmail, work Outlook, shared family Apple calendar
+- **Pain points**: 
+  - Thoughts disappear before she can write them down
+  - Constantly double-books herself across different calendars
+  - Forgets to account for travel time between meetings
+- **Accessibility needs**: Uses VoiceOver occasionally when overwhelmed
+
+## Secondary Persona: "Overwhelmed Owen"  
+- **Age**: 42, freelance consultant
+- **ADHD Type**: Inattentive, late diagnosis at 38
+- **Tech comfort**: Medium
+- **Calendars**: Multiple Google accounts for different clients
+- **Pain points**:
+  - Loses track of which calendar to use for what
+  - Struggles with complex app interfaces
+  - Needs simple, immediate solutions
+- **Accessibility needs**: Uses Voice Control for hands-free operation
+
+## Accessibility Persona: "Adaptive Annie"
+- **Age**: 34, software developer
+- **Conditions**: ADHD + low vision
+- **Tech comfort**: Very high
+- **Calendars**: Work calendar + personal + medical appointments
+- **Pain points**:
+  - Most productivity apps aren't screen reader friendly
+  - Voice apps usually lack visual feedback
+  - Complex setup processes are barriers
+- **Accessibility needs**: Full VoiceOver support, high contrast UI
+```
+
+## 2. API Account Setup (45 mins)
+
+### Google Cloud Console Setup
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com)
+1. Create new project: “ADHD Voice Assistant”
+1. Enable Google Calendar API
+1. Create OAuth 2.0 credentials (iOS app)
+1. Download GoogleService-Info.plist (save for later)
+1. Note your Bundle ID for iOS app
+
+### Microsoft Azure Setup
+
+1. Go to [Azure Portal](https://portal.azure.com)
+1. Register new app: “ADHD Voice Assistant iOS”
+1. Configure platform settings for iOS
+1. Set redirect URI: `msauth.com.yourname.adhdvoiceassistant://auth`
+1. Copy Application ID and Directory ID (save for later)
+
+### Document Your API Keys
+
+Create `development/api-credentials-template.md`:
+
+```markdown
+# API Credentials (DO NOT COMMIT TO GIT)
+
+## Google
+- Project ID: [your-project-id]
+- Client ID: [your-client-id]  
+- GoogleService-Info.plist location: [path]
+
+## Microsoft
+- Application ID: [your-app-id]
+- Directory/Tenant ID: [your-tenant-id]
+- Redirect URI: msauth.com.yourname.adhdvoiceassistant://auth
+
+## Setup Status
+- [ ] Google Calendar API enabled
+- [ ] Microsoft Graph permissions configured  
+- [ ] iOS app bundle ID registered with both services
+- [ ] Test authentication flows completed
+
+## Notes
+- Keep credentials in separate config file
+- Never commit real credentials to GitHub
+- Use environment variables for CI/CD
+```
+
+## 3. Design Your App Icon & Branding (30 mins)
+
+### App Icon Concepts
+
+Think about ADHD-friendly visual design:
+
+- **Calming colors**: Blues, soft greens, avoid overwhelming reds
+- **Simple shapes**: Not too complex for overstimulated brains
+- **Voice metaphor**: Microphone, speech bubble, sound waves
+- **Accessibility**: High contrast, works in dark mode
+
+### Create Brand Guidelines
+
+Create `design/brand-guidelines.md`:
+
+```markdown
+# ADHD Voice Assistant Brand Guidelines
+
+## Color Palette
+**Primary**: #4A90E2 (Calm Blue) - trustworthy, soothing
+**Secondary**: #7ED321 (Success Green) - positive reinforcement  
+**Accent**: #F5A623 (Warm Orange) - attention without alarm
+**Background**: #F8F9FA (Soft White) - reduces eye strain
+**Dark Mode**: #1C1C1E (iOS Dark) - OLED friendly
+
+## Typography
+**Primary**: SF Pro (iOS system font) - familiar, accessible
+**Voice UI**: SF Pro Rounded - friendly, approachable
+**Accessibility**: Minimum 16pt body text, 44pt touch targets
+
+## Voice & Tone
+- **Encouraging, never judgmental**
+- **Clear and direct** (ADHD brains appreciate brevity)
+- **Gentle error messages** (rejection sensitivity aware)
+- **Celebration of wins** (dopamine-friendly)
+
+## Accessibility Standards
+- **Contrast ratio**: Minimum 4.5:1 for normal text
+- **Touch targets**: Minimum 44x44 points
+- **Animation**: Respects reduce motion preferences
+- **VoiceOver**: Descriptive but not verbose labels
+```
+
+## 4. Competitive Analysis (20 mins)
+
+Create `planning/competitive-analysis.md`:
+
+```markdown
+# Competitive Analysis
+
+## Voice Note Apps
+**Apple Voice Memos**
+- ✅ Simple, reliable
+- ❌ No transcription, no calendar integration
+- ❌ Not ADHD-specific
+
+**Otter.ai**  
+- ✅ Great transcription
+- ❌ Complex interface, overwhelming for ADHD
+- ❌ No calendar integration
+
+## Calendar Apps
+**Google Calendar**
+- ✅ Reliable, widely used
+- ❌ Single calendar ecosystem
+- ❌ No ADHD accommodations
+
+**Fantastical**
+- ✅ Natural language processing
+- ❌ Expensive subscription
+- ❌ Complex interface
+
+## ADHD Apps
+**Todoist**
+- ✅ Good task management
+- ❌ No voice capture
+- ❌ Can become overwhelming
+
+**Forest (Focus App)**
+- ✅ ADHD-friendly gamification
+- ❌ No thought capture or calendar
+
+## Our Advantage
+**Unique Position**: Only voice-first ADHD assistant with multi-calendar intelligence
+**Key Differentiators**:
+1. Built specifically for ADHD brains
+2. Multi-calendar conflict prevention
+3. Voice-first with full accessibility
+4. Privacy-focused (on-device processing)
+5. Affordable/free core features
+```
+
+## 5. Create Initial Test Plan (15 mins)
+
+Create `development/testing-strategy.md`:
+
+```markdown
+# Testing Strategy
+
+## MVP Testing Goals
+1. **Prove voice capture works reliably**
+2. **Validate multi-calendar need** 
+3. **Confirm ADHD users will use it consistently**
+
+## Testing Methods
+
+### Accessibility Testing
+- [ ] VoiceOver navigation on all screens
+- [ ] Voice Control command recognition
+- [ ] Switch Control accessibility
+- [ ] High contrast mode compatibility
+- [ ] Reduce motion preferences
+
+### ADHD User Testing
+- [ ] First-use experience (under 2 minutes to value)
+- [ ] Daily usage patterns (3+ thoughts captured per day)
+- [ ] Calendar creation success rate (70%+ from voice)
+- [ ] Multi-calendar conflict detection​​​​​​​​​​​​​​​​
+```
