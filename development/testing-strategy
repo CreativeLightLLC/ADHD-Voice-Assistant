@@ -1,0 +1,21 @@
+# Testing Strategy
+
+## MVP Testing Goals
+1. **Prove voice capture works reliably**
+2. **Validate multi-calendar need** 
+3. **Confirm ADHD users will use it consistently**
+
+## Testing Methods
+
+### Accessibility Testing
+- [ ] VoiceOver navigation on all screens
+- [ ] Voice Control command recognition
+- [ ] Switch Control accessibility
+- [ ] High contrast mode compatibility
+- [ ] Reduce motion preferences
+
+### ADHD User Testing
+- [ ] First-use experience (under 2 minutes to value)
+- [ ] Daily usage patterns (3+ thoughts captured per day)
+- [ ] Calendar creation success rate (70%+ from voice)
+- [ ] Multi-calendar conflict detection​​​​​​​​​​​​​​​​
