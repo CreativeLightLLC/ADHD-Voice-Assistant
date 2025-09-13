@@ -1,0 +1,55 @@
+# ADHD Design Principles
+
+Core principles guiding all design and development decisions.
+
+## 1. Immediate Value
+- No complex setup required
+- Value delivered within first 60 seconds
+- Core features work without configuration
+
+## 2. Gentle Interactions
+- No overwhelming notifications
+- Calming UI colors and spacing
+- Forgiving error handling
+
+## 3. Cognitive Load Reduction
+- Minimal decision points
+- Smart defaults for everything
+- Progressive disclosure of complexity
+
+## 4. Flexibility
+- Multiple ways to accomplish tasks
+- Works with existing workflows
+- Adapts to user patterns
+
+## 5. Context Awareness
+- Understands multi-calendar reality
+- Recognizes ADHD time blindness
+- Provides helpful reminders without nagging
+
+## 6. Privacy & Trust
+- Local processing where possible
+- Clear data usage explanations
+- No judgment in language or design
+
+## Implementation Guidelines
+
+### Voice Interface
+- Instant response to voice commands
+- Natural, conversational language
+- Error recovery without starting over
+
+### Calendar Integration
+- Support multiple providers simultaneously
+- Never force single-calendar workflows
+- Intelligent conflict detection
+
+### Thought Capture
+- One-tap voice recording
+- Automatic transcription and saving
+- Easy search and organization
+
+### Notifications
+- Optional and customizable
+- Respectful timing
+- Clear action items
