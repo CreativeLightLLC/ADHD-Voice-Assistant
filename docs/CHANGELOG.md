@@ -26,6 +26,13 @@ All notable changes to ADHD Voice Assistant will be documented here.
 - EventBus architecture
 - Privacy-first design
 
+### Accessibility
+- VoiceOver support for all features
+- Voice Control integration
+- Switch Control compatibility
+- Cognitive accessibility guidelines
+- WCAG 2.1 AA compliance
+
 ---
 
 ## Version Naming
