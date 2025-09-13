@@ -29,5 +29,17 @@ Voice-first assistant designed specifically for ADHD brains. Captures racing tho
 3. Install dependencies via Swift Package Manager
 4. Configure Google/Microsoft API keys
 
+## Accessibility First
+
+Built with full accessibility support:
+- ✅ VoiceOver (screen reader) compatible
+- ✅ Voice Control integration  
+- ✅ Switch Control support
+- ✅ Cognitive accessibility for ADHD + other needs
+- ✅ WCAG 2.1 AA compliance
+
+*Accessibility isn't an afterthought - it's core to our ADHD-focused design.*
+
+
 ---
 *Built with ❤️ for the ADHD community*
