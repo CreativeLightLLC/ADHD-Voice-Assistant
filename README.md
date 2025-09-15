@@ -6,8 +6,8 @@ Voice-first assistant designed specifically for ADHD brains. Captures racing tho
 
 ## Current Status: MVP Development
 
-**Target**: iOS 14+ for maximum device compatibility  
-**Timeline**: 6-8 weeks to MVP launch  
+**Target**: iOS 17+ for modern speech recognition features  
+**Timeline**: 4 weeks to MVP launch (using EventBus architecture)
 **Focus**: Prove core hypothesis - will ADHD users consistently capture thoughts via voice?
 
 ## Core Features (MVP v1.0)
