@@ -43,15 +43,21 @@ Building an ADHD-focused voice assistant that captures racing thoughts and manag
 ### Core Architecture
 
 ```
-├── iOS 14+ target (SFSpeechRecognizer)
-├── SwiftUI + Core Data
+├── iOS 17+ target (Enhanced SFSpeechRecognizer)
+├── SwiftUI + Core Data + CloudKit
+├── EventBus Architecture (ADHD-specific)
+├── District-based feature organization
+│   ├── VoiceDistrict (speech capture)
+│   ├── CalendarDistrict (multi-calendar)
+│   └── IntelligenceDistrict (pattern detection)
 ├── Universal Calendar Manager
 │   ├── Google Calendar API
 │   ├── EventKit (Apple Calendar)
 │   └── Microsoft Graph API
-├── Voice Capture Manager
-├── Event Bus (simple version)
-└── Calendar Intelligence Engine
+└── ADHD Intelligence Engine
+    ├── Pattern Detection
+    ├── Energy Tracking
+    └── Gentle Interventions
 ```
 
 ### Dependencies
